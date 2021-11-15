@@ -44,7 +44,7 @@ indent_style = space
 FOURSPACES
 
 # Per language
-ruby = <<RB
+ruby = <<~RB
 #{base}
 [*.rb]
 #{twospaces}
@@ -150,7 +150,7 @@ OptionParser.new do |opts|
     if File.exists?(file)
       puts(err)
     else File.write(file, python)
-      puts 'Success: config for python has been generated.'.green
+      puts 'Success: config for Python has been generated.'.green
     end
   end
 
