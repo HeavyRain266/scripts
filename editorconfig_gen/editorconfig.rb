@@ -13,19 +13,19 @@ class Options
     Generator for Editorconfig
 
     OPTIONS:
-    -h,   --help      Prints this message
-    -v,   --version   Prints script version
+      -h,   --help      Prints this message
+      -v,   --version   Prints script version
 
-    -r,   --ruby      Generate config for Ruby
-    -l,   --lua       Generate config for Lua
-    -p,   --python    Generate config for Python
-    -g,   --golang    Generate config for Go
-    -c,   --clang     Generate config for C
-    -cpp, --cplusplus Generate config for C++
-    -w,   --web       Generate as combined for html, css, scss, js & ts
+      -r,   --ruby      Generate config for Ruby scripts
+      -l,   --lua       Generate config for Lua scripts
+      -p,   --python    Generate config for Python scripts
+      -g,   --golang    Generate config for Go Programs
+      -c,   --clang     Generate config for C Programs
+      -cpp, --cplusplus Generate config for C++ Programs
+      -w,   --web       Generate config for Web environment
 
     USAGE:
-    $ ./editorconfig.rb [option]
+      $ ./editorconfig.rb [option]
     HELP
 
     opts.on('-h', '--help') do
