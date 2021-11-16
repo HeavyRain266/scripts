@@ -7,8 +7,6 @@ class String
   def green
     "\e[32m#{self}\e[0m"
   end
-
-  # TODO: Add more colors?
 end
 
 # Generate configurations
@@ -37,7 +35,7 @@ class Config
   FOURSPACES
 
   # Per language
-  @@ruby = <<~RB
+  @ruby = <<~RB
   #{base}
   [*.rb]
   #{twospaces}
@@ -47,13 +45,13 @@ class Config
   #{twospaces}
   RB
 
-  @@lua = <<~LUA
+  @lua = <<~LUA
   #{base}
   [*.lua]
   #{twospaces}
   LUA
 
-  @@python = <<~PY
+  @python = <<~PY
   #{base}
   [*.py]
   #{twospaces}
@@ -61,7 +59,7 @@ class Config
   #{twospaces}
   PY
 
-  @@go = <<~GO
+  @go = <<~GO
   #{base}
   [*.go]
   #{fourspaces}
@@ -69,7 +67,7 @@ class Config
   #{fourspaces}
   GO
 
-  @@c = <<~C
+  @c = <<~C
   #{base}
   [*.{c,h}]
   #{fourspaces}
@@ -79,7 +77,7 @@ class Config
   #{fourspaces}
   C
 
-  @@cpp = <<~CPP
+  @cpp = <<~CPP
   #{base}
   [*.{cpp,hpp}]
   #{fourspaces}
@@ -90,7 +88,7 @@ class Config
   CPP
 
   # combined
-  @@web = <<~WEB
+  @web = <<~WEB
   #{base}
   [*.html]
   #{twospaces}
@@ -101,62 +99,62 @@ class Config
   WEB
 
   # TODO: Add more languages + setup variables for environments
-  @@cfg = '.editorconfig'
-  @@err = 'Error: file .editorconfig already exists and cannot be overwritten.'.red
+  @cfg = '.editorconfig'
+  @err = 'Error: file .editorconfig already exists and cannot be overwritten.'.red
 
   def self.lang_rb
-    if File.exists?(@@cfg)
-      puts(@@err)
-    else File.write(@@cfg, @@ruby)
-      puts 'Success: config for Ruby has been generated.'.green
+    if File.exists?(@cfg)
+      puts(@err)
+    else File.write(@cfg, @ruby)
+      puts 'Success: config for Ruby scripts has been generated.'.green
     end
   end
 
   def self.lang_lua
-    if File.exists?(@@cfg)
-      puts(@@err)
-    else File.write(@@cfg, @@lua)
-      puts 'Success: config for Lua has been generated.'.green
+    if File.exists?(@cfg)
+      puts(@err)
+    else File.write(@cfg, @lua)
+      puts 'Success: config for Lua scripts has been generated.'.green
     end
   end
 
   def self.lang_py
-    if File.exists?(@@cfg)
-      puts(@@err)
-    else File.write(@@cfg, @@python)
-      puts 'Success: config for Python has been generated.'.green
+    if File.exists?(@cfg)
+      puts(@err)
+    else File.write(@cfg, @python)
+      puts 'Success: config for Python scripts has been generated.'.green
     end
   end
 
   def self.lang_go
-    if File.exists?(@@cfg)
-      puts(@@err)
-    else File.write(@@cfg, go)
-      puts 'Success: config for Go has been generated.'.red
+    if File.exists?(@cfg)
+      puts(@err)
+    else File.write(@cfg, go)
+      puts 'Success: config for Go programs has been generated.'.red
     end
   end
 
   def self.lang_c
-    if File.exists?(@@cfg)
-      puts(@@err)
-    else File.write(@@cfg, @@c)
-      puts 'Success: config for C has been generated.'.green
+    if File.exists?(@cfg)
+      puts(@err)
+    else File.write(@cfg, @c)
+      puts 'Success: config for C programs has been generated.'.green
     end
   end
 
   def self.lang_cpp
-    if File.exists?(@@cfg)
-      puts(@@err)
-    else File.write(@@cfg, @@cpp)
-      puts 'Success: config for C++ has been generated.'.green
+    if File.exists?(@cfg)
+      puts(@err)
+    else File.write(@cfg, @cpp)
+      puts 'Success: config for C++ programs has been generated.'.green
     end
   end
 
   def self.env_web
-    if File.exists?(@@cfg)
-      puts(@@err)
-    else File.write(@@cfg, @@web)
-      puts 'Success: combined config for Web has been generated.'.green
+    if File.exists?(@cfg)
+      puts(@err)
+    else File.write(@cfg, @web)
+      puts 'Success: config for Web environment has been generated.'.green
     end
   end
 

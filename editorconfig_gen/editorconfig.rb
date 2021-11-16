@@ -1,15 +1,13 @@
 #!/usr/bin/env ruby
 
 require 'optionparser'
-
 require_relative 'config.rb'
-
 
 class Options
   OptionParser.new do |opts|
 
     # Initialize config class
-    Config::new
+    Config.new
 
     help = <<~HELP
     Generator for Editorconfig
@@ -39,31 +37,31 @@ class Options
     end
 
     opts.on('-r', '--ruby') do
-      Config::lang_rb
+      Config.lang_rb
     end
 
     opts.on('-l', '--lua') do
-      Config::lang_lua
+      Config.lang_lua
     end
 
     opts.on('-p', '--python') do
-      Config::lang_py
+      Config.lang_py
     end
 
     opts.on('-g', '--golang') do
-      Config::lang_go
+      Config.lang_go
     end
 
     opts.on('-c', '--clang') do
-      Config::lang_c
+      Config.lang_c
     end
 
     opts.on('-cpp', '--cplusplus') do
-      Config::lang_cpp
+      Config.lang_cpp
     end
 
     opts.on('-w', '--web') do
-      Config::env_web
+      Config.env_web
     end
 
   end.parse!
